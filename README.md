@@ -1,4 +1,4 @@
-# Coding Assignment (Miro)
+# Coding Assignment (IKEA)
 
 ### Author
 
@@ -19,9 +19,7 @@ The assignment is to implement a warehouse software.
 
 ## How to run the application
 
-The application has been developed in **Java 11**. In order to run it, simply go to the folder with your terminal and
-type `mvn spring-boot:run` (you need to have Maven installed: http://maven.apache.org/install.html)
-or `./mvnw spring-boot:run` (this uses Maven Wrapper).
+The application has been developed in **Java 11**.
 
 The application will run on port 8080.
 
@@ -29,21 +27,12 @@ To check Swagger UI, navigate to http://localhost:8080/swagger-ui.html.
 
 ***
 
-## Docker
+## Docker-Compose
 
-The project also contains a Dockerfile that creates a docker image of the project:
+The project also contains a docker-compose file:
 
 - `mvn clean package`
-- `docker build -t savbiz/warehouse-service .`
-- `docker images (to fetch the image ID)`
-- `docker run -p 8080:8080 -it {IMAGE_ID}`
-
-***
-
-## H2 admin panel
-
-To access H2 admin panel, navigate to http://localhost:8080/h2-console and type `jdbc:h2:mem:warehousedb` as JDBC URL
-and `sa` as both username and password.
+- `docker-compose up`
 
 ***
 
