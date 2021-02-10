@@ -87,3 +87,6 @@ Used for testing:
 
 * **Spring Boot Starter Test**
   [_Starter for testing Spring Boot applications with libraries including JUnit Jupiter, Hamcrest and Mockito._]
+
+* **Test Containers**
+  [_Testcontainers is a Java library that supports JUnit tests, providing lightweight, throwaway instances of common databases, Selenium web browsers, or anything else that can run in a Docker container._]
