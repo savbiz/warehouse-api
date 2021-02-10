@@ -10,22 +10,24 @@ services:
       - 5432
     ports:
       - 5432:5432
-  warehouse-service:
-    container_name: warehouse-service
-    depends_on:
-      - postgres
-    build:
-      context: .
-      dockerfile: Dockerfile
-    image: warehouse-service:latest
-    expose:
-      - 8080
-    ports:
-      - 8080:8080
-      - 5005:5005
-    environment:
-      SPRING_PROFILES_ACTIVE: local
-      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/warehouse-service
-      DB_USER: postgres
-      DB_PASSWORD: db-password
-      JAVA_TOOL_OPTIONS: -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005
+
+### UNCOMMENT THIS IF YOU WANT SERVICE AS WELL ###
+#  warehouse-service:
+#    container_name: warehouse-service
+#    depends_on:
+#      - postgres
+#    build:
+#      context: .
+#      dockerfile: Dockerfile
+#    image: warehouse-service:latest
+#    expose:
+#      - 8080
+#    ports:
+#      - 8080:8080
+#      - 5005:5005
+#    environment:
+#      SPRING_PROFILES_ACTIVE: local
+#      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/warehouse-service
+#      DB_USER: postgres
+#      DB_PASSWORD: db-password
+#      JAVA_TOOL_OPTIONS: -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005

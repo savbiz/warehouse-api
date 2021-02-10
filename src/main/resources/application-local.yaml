@@ -7,3 +7,5 @@ spring:
     username: ${DB_USER:postgres}
     password: ${DB_PASSWORD:db-password}
     driverClassName: org.postgresql.Driver
+  profiles:
+    active: local

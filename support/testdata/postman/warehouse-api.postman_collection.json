@@ -1,0 +1,130 @@
+{
+  "info": {
+    "_postman_id": "6d23bf40-bc3b-4100-8933-dd8cd6d9f6ab",
+    "name": "Warehouse API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Sell Product",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "file",
+              "type": "file",
+              "src": "/Users/savinobizzoca/otherrepos/warehouse/src/test/resources/json/inventory.json"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:8080/warehouse/api/v1/products/5",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "warehouse",
+            "api",
+            "v1",
+            "products",
+            "5"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Upload Product File",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "file",
+              "type": "file",
+              "src": "/Users/savinobizzoca/otherrepos/warehouse/src/test/resources/json/products.json"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:8080/warehouse/api/v1/products/upload",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "warehouse",
+            "api",
+            "v1",
+            "products",
+            "upload"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Upload Article File",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "file",
+              "type": "file",
+              "src": "/Users/savinobizzoca/otherrepos/warehouse/src/test/resources/json/inventory.json"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:8080/warehouse/api/v1/articles/upload",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "warehouse",
+            "api",
+            "v1",
+            "articles",
+            "upload"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Products",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/warehouse/api/v1/products",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "warehouse",
+            "api",
+            "v1",
+            "products"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

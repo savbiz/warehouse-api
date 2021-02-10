@@ -23,16 +23,21 @@ The application has been developed in **Java 11**.
 
 The application will run on port 8080.
 
-To check Swagger UI, navigate to http://localhost:8080/swagger-ui.html.
+To check Swagger UI, navigate to http://localhost:8080/warehouse/swagger-ui/.
 
 ***
 
 ## Docker-Compose
 
-The project also contains a docker-compose file:
+The project also contains a docker-compose file which will setup and start a dockerized PostgreSQL database:
 
 - `mvn clean package`
 - `docker-compose up`
+
+Afterwards start the application with:
+```
+./mvnw spring-boot:run -Dspring-boot.run.profiles=local
+```
 
 ***
 
