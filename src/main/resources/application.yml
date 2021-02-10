@@ -1,0 +1,62 @@
+spring:
+  main:
+    banner-mode: "off"
+  application:
+    name: warehouse-service
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: ${DB_URL}
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
+  jpa:
+    properties:
+      hibernate:
+        show_sql: ${SHOW_SQL:false}
+        jdbc:
+          batch_size: ${JDBC_BATCH_SIZE:10}
+          time_zone: UTC
+          lob:
+            non_contextual_creation: true
+        generate_statistics: false
+        dialect: org.hibernate.dialect.PostgreSQL9Dialect
+    generate-ddl: true
+    open-in-view: false
+  flyway:
+    enabled: true
+  jackson:
+    serialization:
+      WRITE_DATES_AS_TIMESTAMPS: false
+
+server:
+  shutdown: graceful
+
+management:
+  endpoint:
+    health:
+      enabled: true
+      show-details: always
+      probes:
+        enabled: true
+    metrics:
+      enabled: true
+    configprops:
+      enabled: true
+      cache:
+        time-to-live: 5000ms
+  endpoints:
+    enabled-by-default: false
+    web:
+      base-path: /
+      exposure:
+        include: metrics,health,configprops
+
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
+      springframework:
+        jdbc:
+          core:
+            JdbcTemplate: DEBUG
+            StatementCreatorUtils: TRACE
